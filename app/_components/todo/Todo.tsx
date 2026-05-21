@@ -6,7 +6,7 @@ import DeleteTodo from "./DeleteTodo";
 interface TodoProps {
   todo: TodoItemProps;
 }
-const Todo = ({ todo }: TodoItemProps) => {
+const Todo = ({ todo }: TodoProps) => {
   return (
     <div>
       <li className="flex justify-between gap-x-6 py-5">

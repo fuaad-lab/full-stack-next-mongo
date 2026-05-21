@@ -1,10 +1,8 @@
 import React from "react";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -19,13 +17,13 @@ export interface TodoItemProps {
 
 
 const Todos = async () => {
-  const res = await fetch(`${API_URL}/api/todo `, {cache: "no-store"});
+  const res = await fetch(`${API_URL}/api/todo`, {cache: "no-store"});
   const todoList: TodoItemProps[] = await res.json();
   return (
     <div className="w-full my-10">
       <Card>
         <CardHeader>
-          <CardTitle> Todo's</CardTitle>
+          <CardTitle> TodoList's</CardTitle>
           <CardDescription>Become Productive</CardDescription>
         </CardHeader>
         <CardContent>
