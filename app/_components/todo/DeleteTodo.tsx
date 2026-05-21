@@ -1,26 +1,24 @@
-'use client'
+"use client";
 
+import { API_URL } from "@/app/lib/config";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const DeleteTodo = ({ todoId }: { todoId: string }) => {
-    const router = useRouter();
+  const router = useRouter();
 
-    const handleDelte = async() => {
-
-        try {
-
-            const res = await fetch(`http://localhost:3000/api/todo/`+ todoId, {
-                method: 'DELETE',
-            })
-            await res.json();
-            router.refresh();
-            console.log(res)
-        } catch (error) {
-            console.log(error)
-            
-        }
+  const handleDelte = async () => {
+    try {
+      const res = await fetch(`${API_URL}/api/todo/` + todoId, {
+        method: "DELETE",
+      });
+      await res.json();
+      router.refresh();
+      console.log(res);
+    } catch (error) {
+      console.log(error);
     }
+  };
   return (
     <div>
       <button
